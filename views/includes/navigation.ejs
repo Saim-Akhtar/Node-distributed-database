@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg fixed-left navbar-light bg-primary">
+  <a class="navbar-brand" href="/">Node Organizers</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto font-weight-bold">
+      <li class="nav-item <%= path=='/events' ? 'active':'' %>">
+        <a class="nav-link" href="/events">Events</a>
+      </li>
+      <li class="nav-item <%= path=='/queued' ? 'active':'' %>">
+        <a class="nav-link" href="/events/queued">Queued Data</a>
+      </li>
+      <li class="nav-item <%= path=='/events/add/sync' ? 'active':'' %>">
+        <a class="nav-link" href="/events/add/sync">Add Synchronous Data</a>
+      </li>
+      <li class="nav-item <%= path=='/events/add/async' ? 'active':'' %>">
+        <a class="nav-link" href="/events/add/async">Add Asynchronous Data</a>
+      </li>
+
+    </ul>
+
+
+
+
+  </div>
+</nav>

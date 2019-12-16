@@ -1,0 +1,33 @@
+<%- include('includes/head.ejs') %>    
+</head>
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="container my-5">
+        <h2>Add An Event</h2>
+
+        <div class="container">
+            <form action="/events/add/async" method="POST">
+                <div class="form-group">
+                    <label for="title">Event Title</label>
+                    <input type="text" class="form-control" id="title" name="title" placeholder="">
+                  </div>
+                <div class="form-group">
+                  <label for="venue">Event Venue</label>
+                  <input type="text" class="form-control" id="venue" name="venue" placeholder="">
+                </div>
+                <div class="form-group">
+                  <label for="date">Event Date</label>
+                  <input type="date" class="form-control" id="date" name="date" placeholder="">
+                </div>
+                
+                <button type="submit" class="btn btn-primary mb-2">Add Asynchonously</button>
+
+              </form>
+              
+        </div>
+    </div>
+
+
+
+</body>
+</html>

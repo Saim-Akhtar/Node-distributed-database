@@ -1,0 +1,63 @@
+<%- include('includes/head.ejs') %>
+</head>
+
+<body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="container my-5">
+        <h2>List of All Queued Events In HeadQuarter Database</h2>
+        <div class="">
+            <button class="btn <%= user1Flag == 0 ? 'btn-success':'btn-primary' %>" >
+                <a href="<%= user1Flag == 0 ? 'JavaScript:void(0)':'/events/add/user1' %>"
+                     class="text-decoration-none text-white" 
+                     >
+                     <%= user1Flag == 0 ? 'Transferred':'Add' %> In User 1</a>
+            </button>
+            <button class="btn <%= user2Flag == 0 ? 'btn-success':'btn-primary' %>" >
+                    <a href="<%= user2Flag == 0 ? 'JavaScript:void(0)':'/events/add/user2' %>"
+                         class="text-decoration-none text-white" 
+                         >
+                         <%= user2Flag == 0 ? 'Transferred':'Add' %> In User 2</a>
+                </button>
+        </div>
+
+        
+
+        <% if(eventsList.length >0) { %>
+        <table class="table my-3">
+            <thead class="thead-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Title</th>
+                    <th>Venue</th>
+                    <th>Date</th>
+                    <th>In User 1</th>
+                    <th>In User 2</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <% for (let event of eventsList) { %>
+                <tr>
+
+                    <th scope="row"><%= event.id %></th>
+                    <td><%= event.title %></td>
+                    <td><%= event.venue %></td>
+                    <td><%= event.date %></td>
+                    <td><%= event.inUser1 %></td>
+                    <td><%= event.inUser2 %></td>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+        <% } else { %>
+        <h1 class="text-warning text-center">No Events Queued IN Database</h1>
+        <% } %>
+
+
+    </div>
+
+
+
+</body>
+
+</html>
